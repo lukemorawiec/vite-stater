@@ -28,11 +28,11 @@ function App() {
 
   const inputString = "Hello, world!";
   const outputString = processString(inputString);
-  console.log(outputString);
 
   return (
     <>
       <h1>Wstęp do TSa</h1>
+      <div>{outputString}</div>
     </>
   );
 }
