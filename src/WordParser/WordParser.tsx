@@ -21,8 +21,8 @@ interface Todo {
   status: Status;
 }
 
-export default function WordParser({ input, prop }: WordParserProps) {
-  const [todos, setTodos] = useState<Todo[]>([]);
+export default function WordParser({ input }: WordParserProps) {
+  const [todos] = useState<Todo[]>([]);
 
   function countCharacters(str: string): number {
     return str.length;
@@ -52,7 +52,7 @@ export default function WordParser({ input, prop }: WordParserProps) {
   const outputString = processString(input);
   return (
     <div>
-      {todos[0].status === Status.DONE && outputString}
+      {todos[0] && todos[0].status === Status.DONE && outputString}
 
       {todos.map((todo) => {
         if (todo.content) {
